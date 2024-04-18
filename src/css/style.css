@@ -1,12 +1,12 @@
-@import '../css/fonts.css';
-@import '../css/normalize.css';
-@import '../css/variables.css';
-@import '../lib/swiper.css';
-@import '../css/buttons.css';
-@import '../css/modal.css';
-@import '../css/counter.css';
-@import '../css/basket.css';
-@import '../css/form.css';
+@import '../css/utils/fonts.css';
+@import '../css/vendor/normalize.css';
+@import '../css/utils/variables.css';
+@import '../css/components/buttons.css';
+@import '../css/components/stepper.css';
+@import '../css/components/basket.css';
+@import '../css/components/form.css';
+@import '../css/components/notification.css';
+@import '../css/components/sidebar.css';
 
 body {
   font-family: 'Messina Sans', sans-serif;
@@ -140,15 +140,11 @@ main {
   bottom: -10px;
 }
 
-/* main slider */
-
-.slider {
-  padding-top: 24px;
-  padding-bottom: 84px;
-}
-
-.swiper-scrollbar-drag {
-  --swiper-scrollbar-drag-bg-color: var(--title-color);
+/* Карточки */
+.products-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 /* main card */
@@ -255,60 +251,6 @@ main {
   margin-top: 16px;
   color: var(--accent-color);
   display: inline-block;
-}
-
-/* products */
-.products-list {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-/* skeleton */
-.skeleton {
-  position: relative;
-}
-
-.skeleton::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 3;
-  background: linear-gradient(90deg, #eee, #f9f9f9, #eee);
-  background-size: 200%; /* анимация плавности перехода градиента */
-  animation: skeleton 1s infinite reverse;
-}
-
-@keyframes skeleton {
-  0% {
-    background-position: -100% 0;
-  }
-
-  100% {
-    background-position: 100% 0;
-  }
-}
-
-/* footer */
-.footer {
-  padding: 22px 0;
-  background-color: var(--body-color);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  border-top: 1px solid #ddd;
-}
-
-.footer-rights {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: var(--title-color);
 }
 
 /* атомарные классы */

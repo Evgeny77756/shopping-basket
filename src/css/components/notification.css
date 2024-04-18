@@ -1,0 +1,111 @@
+.notification-low-contrast {
+  --notification-background: #fff1f1;
+  --notification-color: #161616;
+  --notification-background-blue: #edf5ff;
+  --notification-background-green: #defbe6;
+  --notification-background-yellow: #fff8e1;
+}
+
+.notification {
+  --notification-background: #393939;
+  --notification-color: #fff;
+
+  width: 560px;
+  background-color: var(--notification-background);
+  font-size: 14px;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: 0.16px;
+  color: var(--notification-color);
+  border: 1px solid #fa4d56;
+  border-left: 3px solid #fa4d56;
+  padding-left: 16px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  margin-bottom: 20px;
+  max-height: 48px;
+  top: 95px;
+  right: 20px;
+}
+
+.notification-title {
+  font-weight: 600;
+  padding: 13px 0;
+  margin-right: 2px;
+}
+
+.notification-subtitle {
+  font-weight: 400;
+}
+
+.notification-icon {
+  margin: 14px 16px 14px 0;
+  margin-bottom: 14px;
+}
+
+.notification-button {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  outline: none; /* Для синий ободки */
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.notification-button svg path {
+  fill: var(--notification-color);
+}
+
+.border-blue {
+  border: 1px solid #4589ff;
+  border-left: 3px solid #4589ff;
+}
+
+.border-green {
+  border: 1px solid #42be65;
+  border-left: 3px solid #42be65;
+}
+
+.border-yellow {
+  border: 1px solid #f1c21b;
+  border-left: 3px solid #f1c21b;
+}
+
+.notification-low-contrast {
+  width: 560px;
+  background-color: var(--notification-background);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: 0.16px;
+  color: var(--notification-color);
+  border: 1px solid #fa4d56;
+  border-left: 3px solid #fa4d56;
+  padding-left: 16px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 20px;
+  max-height: 48px;
+}
+
+.notification-low-blue {
+  border: 1px solid #4589ff;
+  border-left: 3px solid #4589ff;
+  background-color: var(--notification-background-blue);
+}
+
+.notification-low-green {
+  border: 1px solid #42be65;
+  border-left: 3px solid #42be65;
+  background-color: var(--notification-background-green);
+}
+
+.notification-low-yellow {
+  border: 1px solid #f1c21b;
+  border-left: 3px solid #f1c21b;
+  background-color: var(--notification-background-yellow);
+}

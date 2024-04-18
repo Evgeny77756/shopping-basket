@@ -7,7 +7,7 @@
 - Download application
 - Run terminal inside this folder
 - Run yarn install for install dependencies
-- Start JSON Server with command `json-server --watch db.json`
-- After that, run `npx run dev` for running the project
+- Start JSON Server with command `npm run server`
+- After that, run `npm run dev` for running the project
 
 Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
