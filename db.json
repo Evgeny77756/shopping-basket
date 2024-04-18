@@ -31,22 +31,6 @@
       "rating": "3.0",
       "price": "102.10",
       "imgSrc": "/images/help-image-4.jpg"
-    },
-    {
-      "name": "Тестовый товар",
-      "category": "Тестовая категория",
-      "rating": "100",
-      "price": "300",
-      "imgSrc": "https://s1.1zoom.ru/big7/285/Christmas_Holidays_Spruce_Balls_Snowmen_555646_2560x1706.jpg",
-      "id": "ySvhgzJ"
-    },
-    {
-      "id": "3c7z8Hnz7jKjgWkWgdIuL",
-      "name": "вапвапвапвп",
-      "category": "апрапрапрапапр",
-      "rating": "456456",
-      "price": "5675675",
-      "imgSrc": ""
     }
   ]
 }

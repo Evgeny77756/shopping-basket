@@ -1,7 +1,6 @@
 @import '../css/fonts.css';
 @import '../css/normalize.css';
 @import '../css/variables.css';
-@import '../lib/swiper.css';
 @import '../css/buttons.css';
 @import '../css/modal.css';
 @import '../css/counter.css';
@@ -330,4 +329,14 @@ main {
 
 .p-48 {
   padding: 48px 0;
+}
+
+#name-error,
+#category-error,
+#rating-error,
+#price-error {
+  --red: #f44336;
+
+  color: var(--red);
+  font-size: 13px;
 }
