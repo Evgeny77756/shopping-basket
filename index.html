@@ -66,7 +66,7 @@
               </svg>
             </button>
 
-            <button id="open-basket" class="btn-icon">
+            <button id="show-sidebar" class="btn-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M15 22C14.4477 22 14 21.5523 14 21C14 20.4477 14.4477 20 15 20C15.5523 20 16 20.4477 16 21C16 21.5523 15.5523 22 15 22Z"
@@ -133,6 +133,28 @@
         </div>
       </div>
     </header>
+
+    <!-- Сайдбар корзины товаров  -->
+    <dialog class="sidebar" id="sidebar">
+      <div class="sidebar-wrapper">
+        <header>
+          <h2 class="sidebar-title">Товары в корзине</h2>
+          <div class="btn-icon" id="close-sidebar">
+            <svg width="12" height="12" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M8 0.7L7.3 0L4 3.3L0.7 0L0 0.7L3.3 4L0 7.3L0.7 8L4 4.7L7.3 8L8 7.3L4.7 4L8 0.7Z"
+                fill="#161616"
+              />
+            </svg>
+          </div>
+        </header>
+        <section id="basket-list">
+          <!-- Добавленные товары здесь  -->
+        </section>
+      </div>
+    </dialog>
 
     <main>
       <section class="products p-48">
