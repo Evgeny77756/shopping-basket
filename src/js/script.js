@@ -1,10 +1,15 @@
 import { nanoid } from 'nanoid'
 import { validateForm } from '../js/utils/validators'
+import { Sidebar } from './components/sidebar'
+import { Notification } from './components/notification'
 
 const productList = document.querySelector('.products-list') // контейнер для отрисовки товаров
 const form = document.querySelector('form') // получение формы
 
 init()
+
+// Сайдбар (первый параметр - компонент сайдбара , второй - кнопка по клику на которую открывается сайдбар, положение сайдбара (если не передан, то по умолчанию 'left'))
+const panel = new Sidebar('#sidebar', '#show-sidebar', 'right')
 
 // инициализация функций при загрузке страницы
 function init() {
@@ -27,10 +32,6 @@ function init() {
 
           // Валидация только для текущего поля
           const errors = validateForm(userData)
-
-          console.log('errors', errors)
-
-          console.log('userData', userData)
 
           // Обновление сообщения об ошибке только для текущего поля
           const errorElement = document.querySelector(`#${input.name}-error`)
@@ -130,7 +131,12 @@ form.addEventListener('submit', async (event) => {
     })
 
     if (response.ok) {
-      console.log('Товар успешно добавлен')
+      // Показ компонента уведомления
+      const notificationInfo = new Notification({
+        variant: 'green',
+        title: 'Добавление товара',
+        subtitle: 'Товар добавлен на страницу',
+      })
 
       const newProductCard = `
         <div class="main-card" data-id="">
