@@ -115,6 +115,10 @@ form.addEventListener('submit', async (event) => {
   }
 })
 
+// массив объектов степперов в корзине товаров
+
+const steppersObjs = []
+
 /**
  * Функция обработки кликов и добавления товара в корзину по его ID
  * @param {MouseEvent} event - Событие клика
