@@ -133,6 +133,7 @@ function addProductToBasket(event) {
   if (product) {
     // Добавляем товар в корзину и т.д.
     console.log(product)
+
     const card = `
     <div class="counter">
     <label class="counter__field">
@@ -185,6 +186,76 @@ function addProductToBasket(event) {
     </div>
   `
     basketList.insertAdjacentHTML('beforeend', card)
+
+    // Получаем все степперы на каждый товар в корзине
+    const steppers = document.querySelectorAll('section#basket-list .counter')
+
+    const nanoidId = nanoid()
+
+    // получаем последний добавленный степпер
+    const step = steppers[steppers.length - 1]
+
+    // Добавляем к последнему степперу id товара
+    step.setAttribute('id', nanoidId)
+
+    // получаем текущий степпер
+    const counterInput = document.querySelectorAll(`#${step.id}`)
+
+    // создаём объект последнего степпера
+    const stepperObj = {
+      id: step.id, // id степпера
+      countInput: counterInput[0].querySelector('.counter__input'), // получаем доступ к степперу
+
+      // Инициализируем начальное значение степпера
+      count: Number.parseInt(counterInput[0].querySelector('.counter__input')?.value, 10),
+
+      // Добавляем обработчики событий для кнопок степпера
+      counterBtnUp: counterInput[0].querySelector('.counter__btn--up'),
+      counterBtnDown: counterInput[0].querySelector('.counter__btn--down'),
+
+      /**
+       * Обновляет состояние кнопок счетчика.
+       */
+      updateButtonState: function () {
+        this.counterBtnUp.disabled = this.count >= 10
+        this.counterBtnDown.disabled = this.count <= 1
+      },
+
+      /**
+       * Обработчик события клика на кнопку увеличения значения.
+       */
+      handleBtnUpClick: function () {
+        console.log('countInput: ', this.countInput.value)
+        console.log('this.count: ', this.count)
+
+        this.count++
+        this.countInput.value = this.count
+        this.updateButtonState()
+      },
+
+      /**
+       * Обработчик события клика на кнопку уменьшения значения.
+       */
+      handleBtnDownClick: function () {
+        this.count--
+        this.countInput.value = this.count
+        this.updateButtonState()
+      },
+    }
+
+    // добавляем текущий степпер в конец массива с объектами степперов
+    steppersObjs.push(stepperObj)
+
+    // получаем текущий степпер из массива
+    const currentObjOfStepper = steppersObjs[steppersObjs.length - 1]
+
+    // добавляем обработчики событий на кнопки увеличения и уменьшения этого счётчика
+    currentObjOfStepper.counterBtnUp.addEventListener('click', () => currentObjOfStepper.handleBtnUpClick())
+
+    currentObjOfStepper.counterBtnDown.addEventListener('click', () => currentObjOfStepper.handleBtnDownClick())
+
+    // начальная инициализация счётчика
+    currentObjOfStepper.updateButtonState()
   } else {
     console.error(`Товар с ID ${id} не найден`)
   }
